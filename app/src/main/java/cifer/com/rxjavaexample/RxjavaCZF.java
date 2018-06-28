@@ -224,7 +224,13 @@ public class RxjavaCZF {
 
     //buffer:
     public void RxjavaBuffer(){
-
+        Observable.just(1,2,3,4,5).buffer(2,5)
+                .subscribe(new Consumer<List<Integer>>() {
+                    @Override
+                    public void accept(List<Integer> integers) throws Exception {
+                        Log.d(TAG," buffer test vlaues == " + integers);
+                    }
+                });
 
 
     }
